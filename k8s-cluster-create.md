@@ -16,7 +16,7 @@ su - sankar
 
 #How to Enable SSH Password Authentication
 #To enable SSH password authentication, you must SSH in as root to edit this file:
-/etc/ssh/sshd_config
+sudo vi /etc/ssh/sshd_config
 
 PasswordAuthentication yes
 
