@@ -6,13 +6,13 @@ gcloud compute instances create master worker-1 worker-2 --create-disk=auto-dele
 
 ### To Create a User in Ubuntu follow the below steps:
 ```bash
-$ adduser username
+$ adduser sankar
 
 #Add the new user to the sudo group 
-usermod -aG sudo username
+usermod -aG sudo sankar
 
 Switch to newly created user:
-su - username
+su - sankar
 
 #How to Enable SSH Password Authentication
 #To enable SSH password authentication, you must SSH in as root to edit this file:
