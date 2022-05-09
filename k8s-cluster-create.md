@@ -6,13 +6,13 @@ gcloud compute instances create master worker-1 worker-2 --create-disk=auto-dele
 
 ### To Create a User in Ubuntu follow the below steps:
 ```bash
-$ adduser sankar
+$ adduser <username>
 
 #Add the new user to the sudo group 
-usermod -aG sudo sankar
+usermod -aG sudo <username>
 
 Switch to newly created user:
-su - sankar
+su - <username>
 
 #How to Enable SSH Password Authentication
 #To enable SSH password authentication, you must SSH in as root to edit this file:
@@ -45,7 +45,7 @@ sudo apt-get update
 
 sudo apt-get install docker-ce=5:19.03.12~3-0~ubuntu-bionic -y
 sudo apt-mark hold docker-ce
-sudo usermod -aG docker sankar
+sudo usermod -aG docker <username>
 sudo docker version
 
 ```
