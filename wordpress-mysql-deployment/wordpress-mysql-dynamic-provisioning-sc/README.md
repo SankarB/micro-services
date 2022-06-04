@@ -9,7 +9,7 @@
        4. kubectl apply -f 04-secret.yaml
        5. kubectl apply -f 05-mysql-deployment.yaml
        6. kubectl apply -f 06-wp-sc-pd-ssd.yaml
-       7. kubectl apply -f 07-wp-sc-pvc.yaml
+       7. kubectl apply -f 07-wp-pvc.yaml
        8. kubectl apply -f 08-wp-service.yaml
        9. kubectl apply -f 09-wp-deployment.yaml
 
@@ -34,3 +34,11 @@
 
 ## 4. Using Load Balaner newly created IP access your Application.
 
+## 5. Clean up
+    
+    # clean up the cluster, all deployments, Services, PVC's, PV's and SC
+        kubectl delete deployment <deploy-name>
+        kubectl delete service <service-name>
+        kubectl delete pvc <pvc-name>
+        kubectl delete pv <pv-name>
+        kubectl delete sc <sc-name>

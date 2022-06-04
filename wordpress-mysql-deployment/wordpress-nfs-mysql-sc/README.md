@@ -43,7 +43,7 @@
 
 ## 5. Clean up
     
-    # clean up the cluster, all deployments, Services PVC's, PV's and SC
+    # clean up the cluster, all deployments, Services, PVC's, PV's and SC
         kubectl delete deployment <deploy-name>
         kubectl delete service <service-name>
         kubectl delete pvc <pvc-name>
