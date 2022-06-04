@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress-mysql
+  labels:
+    app: wordpress
+spec:
+  ports:
+    - port: 3306
+      targetPort: 3306       #targetPort should match container port, this will be used if we have multiple ports
+      protocol: TCP
+  selector:
+    app: wordpress          #Deployment labels should match to this selectors.
+    tier: mysql
