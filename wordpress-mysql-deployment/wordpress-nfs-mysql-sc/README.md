@@ -30,7 +30,7 @@
         kubectl get pvc
     # Check Secret, should be available 1 
         kubect get secret
-    # Check Service, should be available 2 
+    # Check Service, should be available 3 
         kubect get svc
     # Check Deployment, should be available 2 
         kubect get deploy
