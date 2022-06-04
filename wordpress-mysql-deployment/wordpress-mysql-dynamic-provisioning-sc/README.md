@@ -32,5 +32,5 @@
 
 ## 3. Verify on https://console.cloud.google.com/ load balancing section for Load Balancer which creates by Auto using Wordpress Service type: LoadBalancer 
 
-## 4. Using Load Balaner newly created IP access your Application.
+## 4. Using Load Balancer newly created IP access your Application.
 
