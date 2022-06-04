@@ -48,5 +48,5 @@
         kubectl delete service <service-name>
         kubectl delete pvc <pvc-name>
         kubectl delete pv <pv-name>
-        kubectl delete sc
+        kubectl delete sc <sc-name>
    
