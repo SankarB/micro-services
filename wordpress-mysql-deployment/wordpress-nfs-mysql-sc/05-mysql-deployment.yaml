@@ -1,0 +1,42 @@
+apiVersion: apps/v1 # for k8s versions before 1.9.0 use apps/v1beta2  and before 1.8.0 use extensions/v1beta1
+kind: Deployment
+metadata:
+  name: wordpress-mysql
+  labels:
+    app: wordpress
+spec:
+  selector:
+    matchLabels:
+      app: wordpress
+      tier: mysql
+  strategy:
+    rollingUpdate:        #By default it will be rolling update we used here to know
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+    
+  template:
+    metadata:
+      labels:
+        app: wordpress #label of selector to use, ex: mysql-service
+        tier: mysql    #label of selector to use, ex: mysql-service
+    spec:
+      containers:
+      - image: mysql:5.6
+        name: mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass     #name should be same as secret metadata name 
+              key: password        #secret used here and the key of secret must match
+        ports:
+        - containerPort: 3306
+          name: mysql
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim    #Must match mysql-pvc.yaml metadata name

@@ -1,0 +1,8 @@
+allowVolumeExpansion: true
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: custom-sc-pd-standard        # custom sc to use for pvc and this name should match with 
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard                #This will create pv by auto its a feature of dynamic provisioning and and gcp disk will be created
