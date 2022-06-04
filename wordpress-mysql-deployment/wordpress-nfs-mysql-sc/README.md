@@ -40,3 +40,13 @@
 ## 3. Verify on https://console.cloud.google.com/ load balancing section for Load Balancer which creates by Auto using Wordpress Service type: LoadBalancer 
 
 ## 4. Using Load Balaner newly created IP access your Application.
+
+## 5. Clean up
+    
+    # clean up the cluster, all deployments, Services PVC's, PV's and SC
+        kubectl delete deployment <deploy-name>
+        kubectl delete service <service-name>
+        kubectl delete pvc <pvc-name>
+        kubectl delete pv <pv-name>
+        kubectl delete sc
+   
