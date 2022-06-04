@@ -1,4 +1,10 @@
-# Deploy wordpress and mysql on existing GKE Cluster
+# Wordpress & mysql on GKE Cluster with AccessMode ReadWriteMany for Wordpress(replicas-2)
+
+## 1. On existing GKE Cluster create GCE persistent disk
+
+    # create a GCE persistent disk
+    gcloud compute disks create --size=10GB --zone=us-central1-c gce-nfs-rwx-disk
+    Zones list or regional for high availability check https://cloud.google.com/compute/docs/regions-zones/
 
 ## 1. Deploy mysql DB and wordpress Application(secret.yaml used for wordpress & mysql)
 
@@ -8,10 +14,10 @@
        3. kubectl apply -f 03-mysql-service.yaml
        4. kubectl apply -f 04-secret.yaml
        5. kubectl apply -f 05-mysql-deployment.yaml
-       6. kubectl apply -f 06-wp-sc-pd-ssd.yaml
-       7. kubectl apply -f 07-wp-sc-pvc.yaml
-       8. kubectl apply -f 08-wp-service.yaml
-       9. kubectl apply -f 09-wp-deployment.yaml
+       6. kubectl apply -f 06-nfs-deployment.yaml
+       7. kubectl apply -f 07-wp-nfs-service.yaml
+       8. kubectl apply -f 08-wp-nfs-mv-pvc.yaml
+       9. kubectl apply -f 09-wp-nfs-deployment.yaml
 
 ## 2. Check list prior to access Application
 
@@ -27,10 +33,9 @@
         kubect get svc
     # Check Deployment, should be available 2 
         kubect get deploy
-    # Check Pods, should be available 2, both should be running state
+    # Check Pods, should be available 3, all should be running state
         kubect get pods
 
 ## 3. Verify on https://console.cloud.google.com/ load balancing section for Load Balancer which creates by Auto using Wordpress Service type: LoadBalancer 
 
 ## 4. Using Load Balaner newly created IP access your Application.
-

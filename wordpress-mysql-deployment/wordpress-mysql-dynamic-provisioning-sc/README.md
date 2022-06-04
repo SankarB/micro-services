@@ -9,7 +9,7 @@
        4. kubectl apply -f 04-secret.yaml
        5. kubectl apply -f 05-mysql-deployment.yaml
        6. kubectl apply -f 06-wp-sc-pd-ssd.yaml
-       7. kubectl apply -f 07-wp-pvc.yaml
+       7. kubectl apply -f 07-wp-sc-pvc.yaml
        8. kubectl apply -f 08-wp-service.yaml
        9. kubectl apply -f 09-wp-deployment.yaml
 
@@ -32,5 +32,5 @@
 
 ## 3. Verify on https://console.cloud.google.com/ load balancing section for Load Balancer which creates by Auto using Wordpress Service type: LoadBalancer 
 
-## 4. Using Load Balancer newly created IP access your Application.
+## 4. Using Load Balaner newly created IP access your Application.
 

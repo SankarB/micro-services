@@ -36,4 +36,4 @@ spec:
       volumes:
       - name: wordpress-persistent-storage
         persistentVolumeClaim:
-          claimName: wp-pv-claim            #Should match wp-pvc.yaml metadata name       
+          claimName: nfs-pvc           #Should match wp-pvc.yaml metadata name       
