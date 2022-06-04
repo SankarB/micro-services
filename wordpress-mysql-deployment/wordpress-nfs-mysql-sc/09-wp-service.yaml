@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress
+  labels:
+    app: wordpress
+spec:
+  type: LoadBalancer               
+  ports:
+    - name: wordpress
+      port: 80
+  selector:
+    app: wordpress        #Deployment lable should match
+    tier: frontend

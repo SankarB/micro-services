@@ -9,15 +9,16 @@
 ## 1. Deploy mysql DB and wordpress Application(secret.yaml used for wordpress & mysql)
 
     # Use below commands to deploy required resources/objects
-       1. kubectl apply -f 01-mysql-sc-pd-standard.yaml
-       2. kubectl apply -f 02-mysql-pvc.yaml
-       3. kubectl apply -f 03-mysql-service.yaml
-       4. kubectl apply -f 04-secret.yaml
-       5. kubectl apply -f 05-mysql-deployment.yaml
-       6. kubectl apply -f 06-nfs-deployment.yaml
-       7. kubectl apply -f 07-wp-nfs-service.yaml
-       8. kubectl apply -f 08-wp-nfs-mv-pvc.yaml
-       9. kubectl apply -f 09-wp-nfs-deployment.yaml
+       1.  kubectl apply -f 01-mysql-sc-pd-standard.yaml
+       2.  kubectl apply -f 02-mysql-pvc.yaml
+       3.  kubectl apply -f 03-mysql-service.yaml
+       4.  kubectl apply -f 04-secret.yaml
+       5.  kubectl apply -f 05-mysql-deployment.yaml
+       6.  kubectl apply -f 06-nfs-deployment.yaml
+       7.  kubectl apply -f 07-wp-nfs-service.yaml
+       8.  kubectl apply -f 08-wp-nfs-pv-pvc.yaml
+       9.  kubectl apply -f 09-wp-service.yaml
+       10. kubectl apply -f 10-wp-deployment.yaml
 
 ## 2. Check list prior to access Application
 
