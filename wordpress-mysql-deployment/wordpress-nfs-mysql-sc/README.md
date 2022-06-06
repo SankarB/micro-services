@@ -22,20 +22,20 @@
 
 ## 2. Check list prior to access Application
 
-    # Check Storage Classess, should be available 2 
+    # Check Storage Classess, should be available 1 
         kubect get sc
     # Check Storage Classess, should be available 2, Storage Class will create PersistentVolume dynamicaly
-        kubect get pv
+        kubectl get pv
     # Check PersistentVolumeClaim, should be available 2
         kubectl get pvc
     # Check Secret, should be available 1 
-        kubect get secret
+        kubectl get secret
     # Check Service, should be available 3 
-        kubect get svc
-    # Check Deployment, should be available 2 
-        kubect get deploy
+        kubectl get svc
+    # Check Deployment, should be available 3
+        kubectl get deploy
     # Check Pods, should be available 3, all should be running state
-        kubect get pods
+        kubectl get pods
 
 ## 3. Verify on https://console.cloud.google.com/ load balancing section for Load Balancer which creates by Auto using Wordpress Service type: LoadBalancer 
 
