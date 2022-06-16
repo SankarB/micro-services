@@ -9,6 +9,20 @@
     sudo apt-get install -y kubectl=1.19.1-00
     sudo apt-mark hold kubectl
 
+# Create your own user in Ubuntu follow the below steps:
+    $ adduser <username>
+    #Add the new user to the sudo group 
+    usermod -aG sudo <username>
+
+# Switch to newly created user:
+    su - <username>
+
+# How to Enable SSH Password Authentication
+# To enable SSH password authentication, you must SSH in as root to edit this file:
+    sudo vi /etc/ssh/sshd_config
+    PasswordAuthentication yes
+    sudo service ssh restart
+
 # Create a new namespace named development in Master node
     $ kubectl create ns development
 # Generate a private key for user and Certificate Signing Request (CSR) for user
