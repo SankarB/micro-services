@@ -23,8 +23,6 @@
     PasswordAuthentication yes
     sudo service ssh restart
 
-## Create a new namespace named development in Master node
-    $ kubectl create ns development
 ## Generate a private key for user and Certificate Signing Request (CSR) for user
     $ openssl genrsa -out user.key 2048
 
