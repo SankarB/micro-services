@@ -12,11 +12,11 @@ apt-get install -y kubelet=1.23.1-00 kubectl=1.23.1-00
 9) apt-mark hold kubelet kubectl kubeadm
 10) restart kubelet: sudo systemctl daemon-reload & sudo systemctl restart kubelet
 
-upgrade worker nodes
+# upgrade worker nodes
 -------------------------------
 1) drain worker node(execute from master) all objects will be scheduled to other worker nodes which are available
   ```kubectl drain <worker-node-name> --ignore-daemonsets --force```
-# login to worker node and execute below steps
+## login to worker node and execute below steps
 2) apt-mark unhold kubeadm
 3) apt-get install -y kubeadm=1.23.1-00
 4) apt-mark hold kubeadm
