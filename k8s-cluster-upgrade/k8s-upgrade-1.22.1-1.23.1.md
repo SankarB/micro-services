@@ -25,4 +25,4 @@ apt-get install -y kubelet=1.23.1-00 kubectl=1.23.1-00
   7) apt-get update && apt-get install -y kubelet=1.23.1-00 kubectl=1.23.1-00
   8) sudo systemctl daemon-reload && sudo systemctl restart kubelet
 
-  Repeat worker node steps for all the nodes available
+  Repeat worker node steps for all the worker nodes available
