@@ -89,11 +89,11 @@ apiVersion: kubelet.config.k8s.io/v1beta1
 cgroupDriver: cgroupfs
     
   # Initialising the control-plane node run the below command on the (master node)
-  kubeadm init --config kubeadm-config.yaml
+  sudo kubeadm init --config kubeadm-config.yaml
 
-  sed -i "s/cgroupDriver: systemd/cgroupDriver: cgroupfs/g" /var/lib/kubelet/config.yaml
-  systemctl daemon-reload
-  systemctl restart kubelet
+  sudo sed -i "s/cgroupDriver: systemd/cgroupDriver: cgroupfs/g" /var/lib/kubelet/config.yaml
+  sudo systemctl daemon-reload
+  sudo systemctl restart kubelet
 
 #Set up local kubeconfig:
 mkdir -p $HOME/.kube
