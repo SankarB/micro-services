@@ -78,15 +78,15 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 Create a below config file on master and save.
 vi kubeadm-config.yaml
-   ----------------------
-    kind: ClusterConfiguration
-    apiVersion: kubeadm.k8s.io/v1beta3
-    kubernetesVersion: v1.22.0
-    ---
-    kind: KubeletConfiguration
-    apiVersion: kubelet.config.k8s.io/v1beta1
-    #cgroupDriver: systemd
-    cgroupDriver: cgroupfs
+----------------------
+kind: ClusterConfiguration
+apiVersion: kubeadm.k8s.io/v1beta3
+kubernetesVersion: v1.22.0
+---
+kind: KubeletConfiguration
+apiVersion: kubelet.config.k8s.io/v1beta1
+#cgroupDriver: systemd
+cgroupDriver: cgroupfs
     
   # Initialising the control-plane node run the below command on the (master node)
   kubeadm init --config kubeadm-config.yaml
