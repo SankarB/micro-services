@@ -1,7 +1,7 @@
 ## Configuring NFS Storage PV
 
-## **`Install the software on your master node `**
-- Install the software on your master node
+## **`Install the software on new GCP instance `**
+- Install the software on new GCP instance
 ```
 sudo apt-get update && sudo apt-get install -y nfs-kernel-server
 ```
