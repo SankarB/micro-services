@@ -28,4 +28,4 @@
 
     $ openssl req -new -key user.key -out user.csr -subj "/CN=user/O=development"
 ## Generate a self-signed certificate. Use the CA keys for the Kubernetes cluster and set the certificate expiration.
-    $ sudo openssl x509 -req -in user.csr  -CA /etc/kubernetes/pki/ca.crt -CAkey /etc/kubernetes/pki/ca.key -CAcreateserial  -out user.crt -days 45
+    $ sudo openssl x509 -req -in user.csr  -CA ca.crt -CAkey ca.key -CAcreateserial  -out user.crt -days 45
